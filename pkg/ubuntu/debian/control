@@ -4,7 +4,7 @@ Maintainer: Corentin Chary <corentin.chary@gmail.com>
 Build-Depends: debhelper (>= 7), cdbs, libqt4-dev, qtmobility-dev
 Standards-Version: 3.8.3
 Section: libs
-Homepage: http://xf.iksaif.net/dev/qtm-geoservices-extras.html
+Homepage: https://github.com/iksaif/qtm-geoservices-extras
 
 Package: qtm-geoservices-google
 Architecture: any

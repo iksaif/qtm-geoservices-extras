@@ -3,6 +3,31 @@
 This package contains additional geoservices for Qt Mobility providing integration
 with OpenStreetMap and Google Maps.
 
+## Example
+
+    QMap<QString, QVariant> parameters;
+
+    parameters["mapping.servers"] = (
+      QStringList("http://a.tile.opencyclemap.org/cycle/")
+        << "http://b.tile.opencyclemap.org/cycle/"
+	<< "http://c.tile.opencyclemap.org/cycle/");
+
+    if (serviceProvider)
+        delete serviceProvider;
+
+    serviceProvider = new QGeoServiceProvider("openstreetmap", parameters);
+
+    if (serviceProvider->error() != QGeoServiceProvider::NoError) {
+        QMessageBox::information(
+	    this, tr("Error"),
+            tr("Unable to find the %1 geoservices plugin.").arg(providerId));
+	qApp->quit();
+	return;
+    }
+
+    mapManager = serviceProvider->mappingManager();
+
+
 ## OpenStreetMap (openstreetmap)
 
 ### API
